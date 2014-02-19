@@ -7,14 +7,30 @@
 //
 
 #import "BDAppDelegate.h"
+#import <JASidePanelController.h>
+#import "BDMenuViewController.h"
+#import "BDHomeViewController.h"
 
 @implementation BDAppDelegate
+@synthesize rootViewController=_rootViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    
+    [UINavigationBar appearance].barTintColor = [UIColor blackColor];
+    [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+    [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    
+    self.rootViewController = [[JASidePanelController alloc] init];
+    self.rootViewController.rightPanel = [[BDMenuViewController alloc] init];
+    self.rootViewController.rightGapPercentage = 0.6;
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] init];
+    navigationController.viewControllers = @[[[BDHomeViewController alloc] init]];
+    self.rootViewController.centerPanel = navigationController;
+    
+    self.window.rootViewController = self.rootViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }

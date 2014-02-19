@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BDAppDelegate : UIResponder <UIApplicationDelegate>
+@class JASidePanelController;
 
+@interface BDAppDelegate : UIResponder <UIApplicationDelegate>
+{
+    JASidePanelController *_rootViewController;
+}
+
+@property (strong, nonatomic) JASidePanelController *rootViewController;
 @property (strong, nonatomic) UIWindow *window;
 
 @end
