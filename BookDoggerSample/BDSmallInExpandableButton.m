@@ -19,6 +19,11 @@
     btn.translatesAutoresizingMaskIntoConstraints = NO;
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn setTitle:title forState:UIControlStateNormal];
+    btn.layer.shadowColor = [UIColor blackColor].CGColor;
+    btn.layer.shadowRadius = 3;
+    btn.layer.shadowOffset = CGSizeMake(0, 3);
+    btn.layer.shadowOpacity = 0.7;
+    btn.layer.cornerRadius = 3;
     
     return btn;
 }

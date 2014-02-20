@@ -43,6 +43,7 @@
     dropView.translatesAutoresizingMaskIntoConstraints = NO;
     dropView.backgroundColor = [UIColor colorWithRed:63/255.0 green:99/255.0 blue:35/255.0 alpha:1];
     dropView.hidden = YES;
+    dropView.layer.cornerRadius = YES;
     [self addSubview:dropView];
     
     dropViewLabel = [[UILabel alloc] init];
@@ -69,7 +70,7 @@
         playNowButton, challengeButton, rankingsButton, discussionsButton, dropViewLabel);
     
     [dropView addConstraints:[NSLayoutConstraint
-        constraintsWithVisualFormat:@"|-(8)-[dropViewLabel]-(8)-|"
+        constraintsWithVisualFormat:@"|-(4)-[dropViewLabel]-(4)-|"
         options:0 metrics:nil views:views]];
     
     [dropView addConstraints:[NSLayoutConstraint
