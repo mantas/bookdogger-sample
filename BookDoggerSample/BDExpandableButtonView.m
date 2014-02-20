@@ -41,10 +41,13 @@
     
     dropView = [[UIView alloc] init];
     dropView.translatesAutoresizingMaskIntoConstraints = NO;
-    dropView.backgroundColor = [UIColor colorWithRed:63/255.0 green:99/255.0 blue:35/255.0 alpha:1];
     dropView.hidden = YES;
     dropView.layer.cornerRadius = YES;
     [self addSubview:dropView];
+    
+    dropViewInset = [[UIView alloc] init];
+    dropViewInset.translatesAutoresizingMaskIntoConstraints = NO;
+    [dropView addSubview:dropViewInset];
     
     dropViewLabel = [[UILabel alloc] init];
     dropViewLabel.text = @"Is there white blood in your veins?";
@@ -66,8 +69,16 @@
     discussionsButton = [BDSmallInExpandableButton buttonWithTitle:@"Discussions"];
     [dropView addSubview:discussionsButton];
     
-    NSDictionary *views = NSDictionaryOfVariableBindings(mainButton, dropView,
+    NSDictionary *views = NSDictionaryOfVariableBindings(mainButton, dropView, dropViewInset,
         playNowButton, challengeButton, rankingsButton, discussionsButton, dropViewLabel);
+    
+    [dropView addConstraints:[NSLayoutConstraint
+        constraintsWithVisualFormat:@"H:|[dropViewInset]|"
+        options:0 metrics:nil views:views]];
+    
+    [dropView addConstraints:[NSLayoutConstraint
+        constraintsWithVisualFormat:@"V:|[dropViewInset]|"
+        options:0 metrics:nil views:views]];
     
     [dropView addConstraints:[NSLayoutConstraint
         constraintsWithVisualFormat:@"|-(4)-[dropViewLabel]-(4)-|"
@@ -108,6 +119,8 @@
     completeConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:50];
     [self addConstraint:completeConstraint];
     
+    [self bringSubviewToFront:mainButton];
+    
     return self;
 }
 
@@ -119,14 +132,29 @@
 {
     isExpanded = nextValue;
     
+    dropView.hidden = !isExpanded;
+    completeConstraint.constant = nextValue ? 150 : 50;
     
     if(isExpanded){
         [[NSNotificationCenter defaultCenter]
             postNotificationName:BDExpandableButtonOpenedNotification object:self];
+        
+        CGSize pathSize = dropViewInset.frame.size;
+        
+        CGMutablePathRef path = CGPathCreateMutable() ;
+        CGPathMoveToPoint( path, NULL, 0, 0);
+        CGPathAddLineToPoint(path, NULL, pathSize.width, 0);
+        CGPathAddArcToPoint(path, NULL, pathSize.width, pathSize.height, 0, pathSize.height, 10);
+        CGPathAddArcToPoint(path, NULL, 0, pathSize.height, 0, 0, 10);
+        CGPathCloseSubpath(path);
+        
+        CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+        shapeLayer.fillColor = [UIColor colorWithRed:63/255.0 green:99/255.0 blue:35/255.0 alpha:1].CGColor;
+        shapeLayer.path = path;
+        
+        [dropViewInset.layer addSublayer:shapeLayer];
     }
     
-    dropView.hidden = !isExpanded;
-    completeConstraint.constant = nextValue ? 150 : 50;
 }
 
 - (void)otherExpandedNotification:(NSNotification *)notification

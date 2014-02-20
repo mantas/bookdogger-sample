@@ -15,7 +15,7 @@
 @interface BDExpandableButtonView : UIView
 {
     UIButton *mainButton;
-    UIView *dropView;
+    UIView *dropView, *dropViewInset;
     UILabel *dropViewLabel;
     BDSmallInExpandableButton *playNowButton, *challengeButton, *rankingsButton, *discussionsButton;
     NSLayoutConstraint *dropViewHeightConstraint;
