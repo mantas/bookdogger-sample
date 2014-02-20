@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BDMenuButton.h"
 
 @interface BDMenuViewController : UIViewController
+{
+    UIImageView *avatarView;
+    UILabel *usernameLabel, *rankLabel;
+    BDMenuButton *homeButton, *topicsButton, *friendsButton, *historyButton;
+}
 
 @end

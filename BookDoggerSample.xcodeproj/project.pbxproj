@@ -25,6 +25,8 @@
 		95A1B4CF18B55612004AA347 /* BDExpandableButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A1B4CE18B55612004AA347 /* BDExpandableButtonView.m */; };
 		95A1B4D318B55C16004AA347 /* UIViewController+RightMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A1B4D218B55C16004AA347 /* UIViewController+RightMenuButton.m */; };
 		95A1B4D818B58079004AA347 /* BDSmallInExpandableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A1B4D718B58079004AA347 /* BDSmallInExpandableButton.m */; };
+		95A1B4DA18B586C0004AA347 /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95A1B4D918B586C0004AA347 /* avatar.jpg */; };
+		95A1B4DD18B58AE7004AA347 /* BDMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A1B4DC18B58AE7004AA347 /* BDMenuButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,9 @@
 		95A1B4D218B55C16004AA347 /* UIViewController+RightMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RightMenuButton.m"; sourceTree = "<group>"; };
 		95A1B4D618B58079004AA347 /* BDSmallInExpandableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSmallInExpandableButton.h; sourceTree = "<group>"; };
 		95A1B4D718B58079004AA347 /* BDSmallInExpandableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSmallInExpandableButton.m; sourceTree = "<group>"; };
+		95A1B4D918B586C0004AA347 /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
+		95A1B4DB18B58AE7004AA347 /* BDMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDMenuButton.h; sourceTree = "<group>"; };
+		95A1B4DC18B58AE7004AA347 /* BDMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMenuButton.m; sourceTree = "<group>"; };
 		C3059FC41C4046588B00485F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -142,6 +147,8 @@
 				95A1B4D218B55C16004AA347 /* UIViewController+RightMenuButton.m */,
 				95A1B4D618B58079004AA347 /* BDSmallInExpandableButton.h */,
 				95A1B4D718B58079004AA347 /* BDSmallInExpandableButton.m */,
+				95A1B4DB18B58AE7004AA347 /* BDMenuButton.h */,
+				95A1B4DC18B58AE7004AA347 /* BDMenuButton.m */,
 			);
 			path = BookDoggerSample;
 			sourceTree = "<group>";
@@ -149,6 +156,7 @@
 		95A1B49F18B552E1004AA347 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				95A1B4D918B586C0004AA347 /* avatar.jpg */,
 				95A1B4A018B552E1004AA347 /* BookDoggerSample-Info.plist */,
 				95A1B4A118B552E1004AA347 /* InfoPlist.strings */,
 				95A1B4A418B552E1004AA347 /* main.m */,
@@ -255,6 +263,7 @@
 			files = (
 				95A1B4A318B552E1004AA347 /* InfoPlist.strings in Resources */,
 				95A1B4AB18B552E1004AA347 /* Images.xcassets in Resources */,
+				95A1B4DA18B586C0004AA347 /* avatar.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95A1B4DD18B58AE7004AA347 /* BDMenuButton.m in Sources */,
 				95A1B4C918B55567004AA347 /* BDHomeViewController.m in Sources */,
 				95A1B4CF18B55612004AA347 /* BDExpandableButtonView.m in Sources */,
 				95A1B4D318B55C16004AA347 /* UIViewController+RightMenuButton.m in Sources */,
