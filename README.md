@@ -1,2 +1,1 @@
-bookdogger-sample
-=================
+Sample app
