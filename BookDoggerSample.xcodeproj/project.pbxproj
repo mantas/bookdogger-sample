@@ -24,6 +24,7 @@
 		95A1B4CC18B55585004AA347 /* BDMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A1B4CB18B55585004AA347 /* BDMenuViewController.m */; };
 		95A1B4CF18B55612004AA347 /* BDExpandableButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A1B4CE18B55612004AA347 /* BDExpandableButtonView.m */; };
 		95A1B4D318B55C16004AA347 /* UIViewController+RightMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A1B4D218B55C16004AA347 /* UIViewController+RightMenuButton.m */; };
+		95A1B4D818B58079004AA347 /* BDSmallInExpandableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A1B4D718B58079004AA347 /* BDSmallInExpandableButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		95A1B4CE18B55612004AA347 /* BDExpandableButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDExpandableButtonView.m; sourceTree = "<group>"; };
 		95A1B4D118B55C15004AA347 /* UIViewController+RightMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RightMenuButton.h"; sourceTree = "<group>"; };
 		95A1B4D218B55C16004AA347 /* UIViewController+RightMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RightMenuButton.m"; sourceTree = "<group>"; };
+		95A1B4D618B58079004AA347 /* BDSmallInExpandableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSmallInExpandableButton.h; sourceTree = "<group>"; };
+		95A1B4D718B58079004AA347 /* BDSmallInExpandableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSmallInExpandableButton.m; sourceTree = "<group>"; };
 		C3059FC41C4046588B00485F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,6 +140,8 @@
 				95A1B4CE18B55612004AA347 /* BDExpandableButtonView.m */,
 				95A1B4D118B55C15004AA347 /* UIViewController+RightMenuButton.h */,
 				95A1B4D218B55C16004AA347 /* UIViewController+RightMenuButton.m */,
+				95A1B4D618B58079004AA347 /* BDSmallInExpandableButton.h */,
+				95A1B4D718B58079004AA347 /* BDSmallInExpandableButton.m */,
 			);
 			path = BookDoggerSample;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				95A1B4A918B552E1004AA347 /* BDAppDelegate.m in Sources */,
 				95A1B4A518B552E1004AA347 /* main.m in Sources */,
 				95A1B4CC18B55585004AA347 /* BDMenuViewController.m in Sources */,
+				95A1B4D818B58079004AA347 /* BDSmallInExpandableButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

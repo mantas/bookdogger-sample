@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BDHomeViewController : UIViewController
+@class BDExpandableButtonView;
 
+@interface BDHomeViewController : UIViewController
+{
+    UILabel *sectionTitleLabel;
+    BDExpandableButtonView *button1, *button2, *button3;
+    UIScrollView *scrollView;
+    UIView *scrollViewInset;
+}
 @end

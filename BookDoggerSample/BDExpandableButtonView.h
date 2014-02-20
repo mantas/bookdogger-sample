@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BDExpandableButtonView : UIView
+@class  BDSmallInExpandableButton;
 
+@interface BDExpandableButtonView : UIView
+{
+    UIButton *mainButton;
+    UIView *dropView;
+    UILabel *dropViewLabel;
+    BDSmallInExpandableButton *playNowButton, *challengeButton, *rankingsButton, *discussionsButton;
+    NSLayoutConstraint *dropViewHeightConstraint;
+    NSLayoutConstraint *completeConstraint;
+    
+    BOOL isExpanded;
+}
+
+- (instancetype) initWithTitle:(NSString *)title;
 @end
