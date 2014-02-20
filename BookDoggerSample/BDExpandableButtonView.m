@@ -11,12 +11,17 @@
 
 @interface BDExpandableButtonView()
 - (void)buttonTapped;
+- (void)otherExpandedNotification:(NSNotification *)notification;
+- (void)setExpanded:(BOOL)nextValue;
 @end
 
 @implementation BDExpandableButtonView
 - (instancetype) initWithTitle:(NSString *)title{
     self = [super init];
+    
     self.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(otherExpandedNotification:) name:BDExpandableButtonOpenedNotification object:nil];
     
     mainButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     mainButton.translatesAutoresizingMaskIntoConstraints = NO;
@@ -107,16 +112,31 @@
 
 - (void)buttonTapped
 {
-    NSInteger constant;
+    [self setExpanded:!isExpanded];
+}
+- (void)setExpanded:(BOOL)nextValue
+{
+    isExpanded = nextValue;
+    
+    
     if(isExpanded){
-        constant = 50;
-        isExpanded = NO;
-    }else{
-        constant = 150;
-        isExpanded = YES;
+        [[NSNotificationCenter defaultCenter]
+            postNotificationName:BDExpandableButtonOpenedNotification object:self];
     }
     
     dropView.hidden = !isExpanded;
-    completeConstraint.constant = constant;
+    completeConstraint.constant = nextValue ? 150 : 50;
+}
+
+- (void)otherExpandedNotification:(NSNotification *)notification
+{
+    if(notification.object != self && isExpanded){
+        [self setExpanded:NO];
+    }
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 @end

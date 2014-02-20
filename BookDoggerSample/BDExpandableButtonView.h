@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define BDExpandableButtonOpenedNotification @"BDExpandableButtonOpenedNotification"
+
 @class  BDSmallInExpandableButton;
 
 @interface BDExpandableButtonView : UIView
